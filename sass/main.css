@@ -1,0 +1,30 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  background: #162238 !important;
+  text-align: right !important;
+}
+
+.navbar a {
+  color: #DF6127 !important;
+}
+
+.card-deck img {
+  height: 400px;
+}
+
+.card-deck .text-prix {
+  color: #DF6127;
+  font-size: 1.2rem;
+}
+
+footer {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #162238;
+  height: 50px;
+}
+/*# sourceMappingURL=main.css.map */
