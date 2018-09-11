@@ -10,6 +10,7 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -30,47 +31,31 @@
     include("menu.php");
     ?>
   </header>
+  <div class="container">
 
-  <div class="card-deck col-dm-12 col-sm-12 mt-2 container mb-2">
-    <div class="card">
-      <img class="card-img-top" src="img/shoeOne.jpg" alt="Shoes One">
-      <div class="card-body">
-        <h4 class="card-title">Shoes One</h4>
-        <p class="card-text text-prix">39€</p>
-        <p class="card-text">Disponible</p>
-        <p class="card-text">Chaussure idéal pour le sport.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="img/shoesTwo.jpg" alt="Shoes Two">
-      <div class="card-body">
-        <h4 class="card-title">Shoes Two</h4>
-        <p class="card-text text-prix">59€</p>
-        <p class="card-text">Disponible</p>
-        <p class="card-text">Chaussure faite pour la ville.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="img/shoesTree.jpg" alt="Shoes Tree">
-      <div class="card-body">
-        <h4 class="card-title">Shoes Tree</h4>
-        <p class="card-text text-prix">79€</p>
-        <p class="card-text">Disponible</p>
-        <p class="card-text">Chaussure confortable.</p>
 
+  <div class="card-deck mt-5">
+  <?php
+  include("data.php");
+    //&amp;valeur['image']&amp;valeur['price']&amp;valeur['statut']&amp;valeur['description']
+    foreach ($products as $key => $valeur) {
+      ?>
+      <div class="card mb-3">
+        <a href="<?php echo "product.php?index=$key"?>" target="_blank">
+          <img class="card-img-top" src="<?php echo $valeur['image']?>" alt="<?php echo $valeur['name'] ?>">
+          <div class="card-body">
+            <h4 class="card-title"><?php echo $valeur['name']?></h4>
+            <p class="card-text text-prix"><?php echo $valeur['price']?></p>
+            <p class="card-text"><?php echo $valeur['statut'] ?></p>
+            <p class="card-text"><?php echo $valeur['description'] ?></p>
+        </a>
       </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="img/shoesFour.jpg" alt="Shoes Four">
-      <div class="card-body">
-        <h4 class="card-title">Shoes Four</h4>
-        <p class="card-text text-prix">29€</p>
-        <p class="card-text">Indisponbile</p>
-        <p class="card-text">Chaussure à petit prix.</p>
-
       </div>
-    </div>
-  </div>
+      <?php
+    }
+  ?>
+</div>
+</div>
   <footer>
     <?php
     include("footer.php");
