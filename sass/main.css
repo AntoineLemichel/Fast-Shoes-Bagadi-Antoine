@@ -1,30 +1,47 @@
 html, body {
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 .navbar {
   background: #162238 !important;
-  text-align: right !important;
-}
+  text-align: right !important; }
+  .navbar a {
+    color: #DF6127 !important; }
 
-.navbar a {
-  color: #DF6127 !important;
-}
-
-.card-deck img {
-  height: 400px;
-}
-
-.card-deck .text-prix {
-  color: #DF6127;
-  font-size: 1.2rem;
-}
+.card-deck {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: auto;
+  margin: auto; }
+  .card-deck img {
+    height: 400px; }
+  .card-deck .text-prix {
+    color: #DF6127;
+    font-size: 1.2rem; }
+  .card-deck a {
+    color: black; }
+    .card-deck a:hover {
+      text-decoration: none; }
 
 footer {
   padding: 0 !important;
   margin: 0 !important;
   background: #162238;
-  height: 50px;
-}
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  footer svg {
+    margin: 10px; }
+
+@media only screen and (min-width: 1000px) {
+  .card-deck {
+    display: grid;
+    grid-template-columns: auto auto; } }
+@media only screen and (min-width: 1300px) {
+  .card-deck {
+    display: grid;
+    grid-template-columns: auto auto auto auto; } }
+
 /*# sourceMappingURL=main.css.map */
