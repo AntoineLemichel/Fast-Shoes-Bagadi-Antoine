@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Fast Shoes</title>
+  <title>Fast Shoes| <?php echo $products[$_GET['index']]['name']; ?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -36,11 +36,11 @@
   <div class="wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 col-md-12 col-sm-12"><img class="img-fluid" src="img/shoeOne.jpg" alt="a shoes"></div>
+        <div class="col-lg-5 col-md-12 col-sm-12"><img class="img-fluid" src="<?php echo $products[$_GET['index']]['image']; ?>" alt="a shoe"></div>
         <div class="col-lg-7 col-md-12 col-sm-12">
           <div class="discription">
-            <h1 class="text-center">Lorem ipsum dolor.</h1>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium vero voluptatem eligendi quas, autem ad accusantium debitis delectus magni laborum harum neque repellat error reiciendis praesentium ipsum rem vel quaerat.</p>
+            <h1 class="text-center"><?php echo $products[$_GET['index']]['name']; ?></h1>
+            <p class="text-center"><?php echo $products[$_GET['index']]['description']; ?></p>
             <div class="btn text-left">
               <button class="color btn1 text-left"></button>
               <button class="color btn2"></button>
@@ -51,7 +51,7 @@
             </div>
             <hr>
             <span class="statue text-left float-left">Statue:</span>
-            <button class="price float-right bg-success">Price:</button>
+            <span class="price float-right">Price:<?php echo $products[$_GET['index']]['price']; ?></span>
           </div>
         </div>
       </div>
