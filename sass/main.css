@@ -13,8 +13,6 @@ html, body {
   display: grid;
   grid-template-columns: auto;
   margin: auto; }
-  .card-deck img {
-    height: 400px; }
   .card-deck .text-prix {
     color: #DF6127;
     font-size: 1.2rem; }
