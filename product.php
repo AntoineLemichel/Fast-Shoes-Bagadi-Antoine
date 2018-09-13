@@ -1,15 +1,15 @@
 
 
-
-
+<?php include('menu.php');
+include("data.php");
+?>
 
 <!doctype html>
 <html class="no-js" lang="fr-FR">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Fast Shoes</title>
+  <title>Fast Shoes - <?php echo $products[$_GET['index']]['name']; ?></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -31,32 +31,56 @@
 
   <!-- Add your site or application content here -->
   <header>
-    <?php include('menu.php')?>
+    <?php include('menu.php') ?>
   </header>
+
   <div class="wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 col-md-12 col-sm-12"><img class="img-fluid" src="img/shoeOne.jpg" alt="a shoes"></div>
-        <div class="col-lg-7 col-md-12 col-sm-12">
-          <div class="discription">
-            <h1 class="text-center">Lorem ipsum dolor.</h1>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium vero voluptatem eligendi quas, autem ad accusantium debitis delectus magni laborum harum neque repellat error reiciendis praesentium ipsum rem vel quaerat.</p>
-            <div class="btn text-left">
-              <button class="color btn1 text-left"></button>
-              <button class="color btn2"></button>
-              <button class="color btn3"></button>
-              <button class="color btn4"></button>
-              <button class="color btn5"></button>
-              <button class="size">Size:</button>
+        <?php
+        if($_GET['index'] == $products[$_GET['index']]['id']){
+          ?>
+          <div class="col-lg-5 col-md-12 col-sm-12"><img class="img-fluid" src="<?php echo $products[$_GET['index']]['image']; ?>" alt="a shoe"></div>
+          <div class="col-lg-7 col-md-12 col-sm-12">
+            <div class="discription">
+              <h1 class="text-center"><?php echo $products[$_GET['index']]['name']; ?></h1>
+              <p class="text-center"><?php echo $products[$_GET['index']]['description']; ?></p>
+              <div class="btn text-left">
+                <button class="color btn1 text-left"></button>
+                <button class="color btn2"></button>
+                <button class="color btn3"></button>
+                <button class="color btn4"></button>
+                <button class="color btn5"></button>
+                <select class="size">Size:
+
+                </select>
+                <?php
+                foreach ($products as $size) {
+
+                }
+                echo $products[$_GET['index']]['size'][0];
+                 ?>
+              </div>
+              <hr>
+              <?php
+              if($products[$_GET['index']]['statut'] == "Disponible"){
+                echo '<span class="statue text-left float-left green">' . $products[$_GET['index']]['statut'] . '</span>';
+              } else {
+                echo '<span class="statue text-left float-left red">' . $products[$_GET['index']]['statut'] . '</span>';
+              }
+              ?>
+              <span class="price float-right">Price: <?php echo $products[$_GET['index']]['price']; ?></span>
             </div>
-            <hr>
-            <span class="statue text-left float-left">Statue:</span>
-            <button class="price float-right bg-success">Price:</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <?php
+  } else {
+    echo "La chaussure demander n'existe pas.";
+  }
+    ?>
+
   <footer>
     <?php
     include("footer.php");
