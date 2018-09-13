@@ -1,3 +1,5 @@
+
+
 <?php include('menu.php');
 include("data.php");
 ?>
@@ -29,7 +31,7 @@ include("data.php");
 
   <!-- Add your site or application content here -->
   <header>
-
+    <?php include('menu.php') ?>
   </header>
 
   <div class="wrapper">
