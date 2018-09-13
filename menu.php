@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="index.php">Fast Shoes
-    <?xml version="1.0"?>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px"
       y="0px" width="32px" height="32px" viewBox="0 0 567.639 567.639" style="enable-background:new 0 0 567.639 567.639;"
       xml:space="preserve">
