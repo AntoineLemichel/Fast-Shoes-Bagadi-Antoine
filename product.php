@@ -1,8 +1,3 @@
-
-
-
-
-
 <!doctype html>
 <html class="no-js" lang="fr-FR">
 
@@ -31,7 +26,7 @@
 
   <!-- Add your site or application content here -->
   <header>
-    <?php include('menu.php')?>
+    <?php include('menu.php') ?>
   </header>
   <div class="wrapper">
     <div class="container">
