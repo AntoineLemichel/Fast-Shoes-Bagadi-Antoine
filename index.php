@@ -34,6 +34,7 @@
   <header>
     <?php
     include("menu.php");
+    include("data.php");
     ?>
   </header>
   <div class="container">
@@ -41,8 +42,7 @@
 
   <div class="card-deck mt-5">
   <?php
-  include("data.php");
-    //&amp;valeur['image']&amp;valeur['price']&amp;valeur['statut']&amp;valeur['description']
+
     foreach ($products as $key => $valeur) {
       ?>
       <div class="card mb-3">
@@ -53,8 +53,8 @@
             <p class="card-text text-prix"><?php echo $valeur['price']?></p>
             <p class="card-text"><?php echo $valeur['statut'] ?></p>
             <p class="card-text"><?php echo $valeur['description'] ?></p>
+          </div>
         </a>
-      </div>
       </div>
       <?php
     }
@@ -63,7 +63,7 @@
 </div>
   <footer>
     <?php
-    include("footer.php");
+    include("footer.html");
     ?>
   </footer>
 

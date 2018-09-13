@@ -7,6 +7,10 @@ $products = [
     'image' => "img/shoesOne.jpg",
     'statut' => 'Disponible',
     'description' => 'Chaussure confortable pour toute la famille',
+    'size' => [
+      '39' => 39,
+      '40' => 40,
+    ],
   ],
   [
     'id' => 1,
@@ -14,7 +18,11 @@ $products = [
     'price' => '139€',
     'image' => "img/shoesTwo.jpg",
     'statut' => 'Disponible',
-    'description' => 'Chaussure confortable pour toute la famille'
+    'description' => 'Chaussure confortable pour toute la famille',
+    'size' => [
+      '39' => 39,
+      '40' => 40,
+    ]
   ],
   [
     'id' => 2,
@@ -22,7 +30,11 @@ $products = [
     'price' => '139€',
     'image' => "img/shoesTree.jpg",
     'statut' => 'Disponible',
-    'description' => 'Chaussure confortable pour toute la famille'
+    'description' => 'Chaussure confortable pour toute la famille',
+    'size' => [
+      '39' => 39,
+      '40' => 40,
+    ]
   ],
   [
     'id' => 3,

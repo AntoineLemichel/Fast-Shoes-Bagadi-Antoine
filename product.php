@@ -49,10 +49,24 @@ include("data.php");
                 <button class="color btn3"></button>
                 <button class="color btn4"></button>
                 <button class="color btn5"></button>
-                <button class="size">Size:</button>
+                <select class="size">Size:
+
+                </select>
+                <?php
+                foreach ($products as $size) {
+
+                }
+                echo $products[$_GET['index']]['size'][0];
+                 ?>
               </div>
               <hr>
-              <span class="statue text-left float-left">Statue: <?php echo $products[$_GET['index']]['statut']; ?></span>
+              <?php
+              if($products[$_GET['index']]['statut'] == "Disponible"){
+                echo '<span class="statue text-left float-left green">' . $products[$_GET['index']]['statut'] . '</span>';
+              } else {
+                echo '<span class="statue text-left float-left red">' . $products[$_GET['index']]['statut'] . '</span>';
+              }
+              ?>
               <span class="price float-right">Price: <?php echo $products[$_GET['index']]['price']; ?></span>
             </div>
           </div>
