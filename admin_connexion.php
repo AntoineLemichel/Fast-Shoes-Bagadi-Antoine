@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Fast Shoes</title>
+  <title>Fast Shoes - Admin</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,42 +28,39 @@
   <!-- Add your site or application content here -->
   <header>
     <?php
-    include("menu.php");
+    // include("menu.php");
     include("data.php");
     ?>
   </header>
-  <div class="container">
-
-
-  <div class="card-deck mt-5">
   <?php
-  $reponse = $bdd->query('SELECT * FROM product');
+  $reponse = $bdd->query('SELECT * FROM users')->fetch();
+  if (isset($_POST['user']) and !empty($_POST['user']) and isset($_POST['password']) and !empty($_POST['password'])) {
+      if ($reponse['user'] == $_POST['user'] and $reponse['password'] == $_POST['password'] and $reponse['rang'] == 1) {
+          ?>
+        <form class="connexion_admin" action="add_product.php" method="post" enctype="multipart/form-data">
+          <input type="text" name="name" placeholder="Nom" required>
+          <textarea name="description" rows="3" cols="40" placeholder="Description" required></textarea>
+          <input type="number" name="price" required>
+          <input type="file" name="file" required>
+          <select name="statut[]">
+            <option value="disponible" name="disponible">Disponible</option>
+            <option value="indisponible" name="indisponible">Indisponible</option>
+          </select>
 
-  while ($valeur = $reponse->fetch()) {
-      ?>
-      <div class="card mb-3">
-        <a href="<?php echo "product.php?index=" . $valeur['id']?>" target="_blank">
-          <img class="card-img-top" src="<?php echo $valeur['image']?>" alt="<?php echo $valeur['name'] ?>">
-          <div class="card-body">
-            <h4 class="card-title"><?php echo $valeur['name']?></h4>
-            <p class="card-text text-prix"><?php echo $valeur['price']?> €</p>
 
-            <?php
-            if ($valeur['statut'] == 0) {
-                $statut = "Disponible";
-            } else {
-                $statut = "Indisponbile";
-            } ?>
-            <p class="card-text"><?php echo $statut ?></p>
-            <p class="card-text"><?php echo $valeur['description'] ?></p>
-          </div>
-        </a>
-      </div>
-      <?php
+          <input type="submit" name="submit" value="Envoyer">
+        </form>
+
+
+        <?php
+      } else {
+          echo "Connexion refusé !";
+      }
   }
+
+
   ?>
-</div>
-</div>
+
   <footer>
     <?php
     include("footer.html");

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Fast Shoes</title>
+  <title>Fast Shoes - Admin</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,38 +32,12 @@
     include("data.php");
     ?>
   </header>
-  <div class="container">
+  <form action="admin_connexion.php" method="post" class="connexion_admin">
+    <input type="text" name="user" placeholder="User" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" name="submit" value="Connexion">
+  </form>
 
-
-  <div class="card-deck mt-5">
-  <?php
-  $reponse = $bdd->query('SELECT * FROM product');
-
-  while ($valeur = $reponse->fetch()) {
-      ?>
-      <div class="card mb-3">
-        <a href="<?php echo "product.php?index=" . $valeur['id']?>" target="_blank">
-          <img class="card-img-top" src="<?php echo $valeur['image']?>" alt="<?php echo $valeur['name'] ?>">
-          <div class="card-body">
-            <h4 class="card-title"><?php echo $valeur['name']?></h4>
-            <p class="card-text text-prix"><?php echo $valeur['price']?> €</p>
-
-            <?php
-            if ($valeur['statut'] == 0) {
-                $statut = "Disponible";
-            } else {
-                $statut = "Indisponbile";
-            } ?>
-            <p class="card-text"><?php echo $statut ?></p>
-            <p class="card-text"><?php echo $valeur['description'] ?></p>
-          </div>
-        </a>
-      </div>
-      <?php
-  }
-  ?>
-</div>
-</div>
   <footer>
     <?php
     include("footer.html");
